@@ -1,4 +1,4 @@
-# ML Mini-Projects Portfolio
+# ML Mini-Projects 
 
 A collection of beginner-to-intermediate machine learning projects covering classification, regression, and a rule-based chatbot. Each notebook is self-contained and demonstrates a full workflow: data loading, preprocessing, model training, evaluation, and a single-sample prediction demo.
 
