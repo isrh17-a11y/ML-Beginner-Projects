@@ -1,17 +1,29 @@
-# ML Mini-Projects 
+# ML Mini-Projects Portfolio
 
 A collection of beginner-to-intermediate machine learning projects covering classification, regression, and a rule-based chatbot. Each notebook is self-contained and demonstrates a full workflow: data loading, preprocessing, model training, evaluation, and a single-sample prediction demo.
+
+## Key Results
+
+| Project | Model | Metric | Result |
+|---|---|---|---|
+| Breast Cancer Prediction | Logistic Regression | Accuracy | **97.4%** |
+| Diabetes Progression | Linear Regression | R² / MSE | **0.45** / 2900.19 |
+| House Sale Price Prediction | Random Forest | R² / MAE | **0.81** / $12,043 |
+| MIMI Chatbot | Rule-based keyword matching | — | N/A (not ML) |
+
+*Metrics reproduced by running each notebook end-to-end; see individual sections below for dataset and pipeline details.*
 
 ## Projects
 
 ### 🩺 Breast Cancer Prediction
-**File:** `Breast_Cancer_prediction_.ipynb`
+**File:** `Breast Cancer prediction .ipynb`
 
 A binary classification model that predicts whether a breast tumor is **malignant** or **benign**.
 
 - **Dataset:** scikit-learn's built-in `load_breast_cancer` (30 numeric features per tumor — radius, texture, smoothness, etc.)
 - **Model:** Logistic Regression
 - **Pipeline:** train/test split → `StandardScaler` → `LogisticRegression` → accuracy evaluation
+- **Result:** 97.4% accuracy on held-out test data
 - **Demo:** predicts the diagnosis for a single sample input
 
 **Tech stack:** `scikit-learn`, `numpy`
@@ -19,13 +31,14 @@ A binary classification model that predicts whether a breast tumor is **malignan
 ---
 
 ### 💉 Diabetes Progression Prediction
-**File:** `Diabetes_diagnosis.ipynb`
+**File:** `Diabetes diagnosis.ipynb`
 
 A regression model that predicts a patient's diabetes progression score one year after baseline.
 
 - **Dataset:** scikit-learn's built-in `load_diabetes` (10 normalized features — age, BMI, blood pressure, etc.)
 - **Model:** Linear Regression
 - **Pipeline:** train/test split → `StandardScaler` → `LinearRegression` → MSE / R² evaluation
+- **Result:** R² = 0.45, MSE = 2900.19 on held-out test data
 - **Visualization:** Actual vs. Predicted scatter plot
 - **Demo:** predicts a progression score for a single new patient
 
@@ -43,6 +56,7 @@ A regression model that predicts house sale prices from structural and zoning fe
 - **Dataset:** `HousePricePrediction.xlsx` (Kaggle-style housing dataset)
 - **Model:** Random Forest Regressor
 - **Pipeline:** load Excel data → handle missing values (mean-fill `SalePrice`, drop remaining nulls) → label-encode categorical columns (`MSZoning`, `LotConfig`, `BldgType`, `Exterior1st`) → train/test split → `StandardScaler` → `RandomForestRegressor` → MAE / R² evaluation
+- **Result:** R² = 0.81, MAE ≈ $12,043 on held-out test data
 - **Demo:** predicts the sale price for a single new house
 
 **Tech stack:** `scikit-learn`, `pandas`, `numpy`, `openpyxl`
@@ -82,13 +96,14 @@ Then open any `.ipynb` file and run all cells in order.
 ## Repository Structure
 ```
 .
-├── Breast_Cancer_prediction_.ipynb
-├── Diabetes_diagnosis.ipynb
+├── Breast Cancer prediction .ipynb
+├── Diabetes diagnosis.ipynb
 ├── Salesprediction.ipynb
+├── HousePricePrediction.xlsx
 ├── CHATBOT.ipynb
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ## License
 This project is open source and available under the [MIT License](LICENSE).
-
